@@ -11,9 +11,7 @@ const getAll=(query)=>{
 const getbyId=(Id)=>{
     return Blog.findById(Id).exec();
 }
-// const edit=(Id,body)=>{
-//     return Blog.findByIdAndUpdate(Id,body,{new: true}).exec();
-// }
+
 const editMyBlog=(Id,Eid,body)=>{
     return Blog.updateOne({$and:[{_id:Eid},{author:Id}]},{$set:body}).exec();
 }

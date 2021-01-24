@@ -45,10 +45,6 @@ const pullFId = async (id, target)=>{
         return {"status":"unfollowed"};    
 }
 
-// const deleteOne=(Id)=>{
-//     return Blog.findByIdAndDelete(Id);
-// }
-
 module.exports = { 
     create,login,edit,getAll,pushFId,pullFId
     

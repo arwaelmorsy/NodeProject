@@ -4,7 +4,6 @@ const routes = require('./Routes');
 const { getAll } = require('./controllers/blog');
  
 const app=express();
-// const url = 'mongodb+srv://ArwaMohamed:arwa@2020@cluster0.nwjmr.mongodb.net/nodeProject?retryWrites=true&w=majority'
 const { MONGODB_URI } = process.env;
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true }).then(() => console.log('Database Connected Successfully'))
 
