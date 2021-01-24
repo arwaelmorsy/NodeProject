@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./Routes');
-const { getAll } = require('./controllers/blog');
+// const { getAll } = require('./controllers/blog');
  
 const app=express();
 const { MONGODB_URI } = process.env;
@@ -14,7 +14,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true }).then(() => console.log(
 app.use(express.json());
 
 app.use('/',routes) ;
-app.get('/',getAll);
+//app.get('/',getAll);
 
 
 app.use((req,res,next)=>{
