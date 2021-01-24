@@ -38,7 +38,7 @@ app.use((err,req,res,next)=>{
 
 });
 
-const { port=3000 }=process.env
-app.listen(port,()=>{
-    console.log('app is up and ready on:',port)
+const { PORT=3000 }=process.env
+app.listen(PORT,()=>{
+    console.log('app is up and ready on:',PORT)
 })
