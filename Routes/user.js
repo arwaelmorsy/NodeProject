@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const authMiddleWare = require('../middlwares/auth');
-const { create,login,edit,getAll,pushFId,pullFId } = require('../controllers/user');
+const { create,login,edit,getAll,pushFId,pullFId,deleteOne } = require('../controllers/user');
 
 
 
@@ -63,5 +63,15 @@ router.post('/unfollow/:fid',authMiddleWare,async(req,res,next)=>{
     }
 })
 
+router.delete('/:Did', async (req,res,next)=>{
+    const { user:{id},params:{Did} } = req;
+    //Id=req.params.id;
+    try{
+        const user = await  deleteOne(id,Did);
+        res.json(user);
+    } catch (e) {
+        next(e);
+    }
+})
 
 module.exports=router;
