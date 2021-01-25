@@ -12,8 +12,8 @@ const getbyId=(Id)=>{
     return Blog.findById(Id).exec();
 }
 
-const editMyBlog=(Id,Eid,body)=>{
-    return Blog.updateOne({$and:[{_id:Eid},{author:Id}]},{$set:body}).exec();
+const editMyBlog=(id,Eid,body)=>{
+    return Blog.updateOne({$and:[{_id:Eid},{author:id}]},{$set:body},{new:true}).exec();
 }
 const deleteOne=(id,Did)=>{
     return Blog.find({$and:[{_id:Did},{author:id}]}).remove();
