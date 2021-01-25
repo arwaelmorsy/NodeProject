@@ -44,8 +44,8 @@ const pullFId = async (id, target)=>{
         User.updateOne({ _id:target },{$pull :{ following: id }},{ new: true }).exec();
         return {"status":"unfollowed"};    
 }
-const deleteOne=(id,Did)=>{
-    return User.find({$and:[{_id:Did},{author:id}]}).remove();
+const deleteOne=(id)=>{
+    return User.findByIdAndDelete(id);
 }
 
 module.exports = { 

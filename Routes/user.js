@@ -63,11 +63,11 @@ router.post('/unfollow/:fid',authMiddleWare,async(req,res,next)=>{
     }
 })
 
-router.delete('/:Did', async (req,res,next)=>{
-    const { user:{id},params:{Did} } = req;
+router.delete('/', async (req,res,next)=>{
+    const { user:{id} } = req;
     //Id=req.params.id;
     try{
-        const user = await  deleteOne(id,Did);
+        const user = await  deleteOne(id);
         res.json(user);
     } catch (e) {
         next(e);
